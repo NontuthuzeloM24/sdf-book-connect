@@ -1,24 +1,16 @@
-import { booksData } from "./loadBooks.js";
+// loadMore.js
+import { getNextBooks } from "./grid.js";
 import { displayBooks } from "./display.js";
 
-let booksPerPage = 4;
-let currentPage = 1;
-
-export function setupLoadMore() {
-    const loadMoreBtn = document.querySelector("#loadMoreBtn");
-    if (!loadMoreBtn) return;
-
-    loadMoreBtn.addEventListener("click", () => {
-        currentPage++;
-        loadVisibleBooks();
-    });
-
-    loadVisibleBooks(); // initial load
+export function loadMoreBooks() {
+    const nextBooks = getNextBooks();
+    if (nextBooks.length === 0) {
+        alert("No more books to load.");
+        return;
+    }
+    displayBooks(nextBooks);
 }
 
-function loadVisibleBooks() {
-    const end = currentPage * booksPerPage;
-    const visibleBooks = booksData.slice(0, end);
-    displayBooks(visibleBooks);
-}
+
+
 

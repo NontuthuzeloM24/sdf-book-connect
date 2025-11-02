@@ -1,11 +1,30 @@
-import { fetchBooks, booksData } from "./loadBooks.js";
+// script.js
+import { fetchBooks, loadFromLocal } from "./loadBooks.js";
 import { displayBooks } from "./display.js";
-import { setupGrid } from "./grid.js";
-import { setupLoadMore } from "./loadMore.js";
+import { loadMoreBooks } from "./loadMore.js";
+import { resetGrid, getNextBooks } from "./grid.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await fetchBooks();           // fetch books from API or localStorage
-    displayBooks(booksData);      // show books
-    setupGrid();                  // handle responsive grid
-    setupLoadMore();              // initialize load more functionality
+    // Load from localStorage first for speed
+    loadFromLocal();
+
+    // Fetch from API to update data
+    await fetchBooks();
+
+    // Reset pagination
+    resetGrid();
+
+    // Load first batch of books
+    const firstBatch = getNextBooks();
+    displayBooks(firstBatch);
+
+    // Load more button
+    const loadMoreBtn = document.querySelector("#loadMoreBtn");
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+            loadMoreBooks();
+        });
+    }
 });
+
+
