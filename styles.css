@@ -66,36 +66,35 @@ body {
 .top-view {
     background: black;
     display: flex;
+    justify-items: space-between;
     align-items: center;
+    padding: 10px 10px;
+
+
 }
 
 .page-tittle {
     color: white;
     font-size: x-large;
+    margin: 0;
 }
 
 .search-bars {
     display: flex;
-    justify-content: flex-end;
+    gap: 10px;
 }
 
-.search-placeholder {
+.search-bars input {
     border: none;
-    border-radius: 20px;
-    padding: 12px 12px;
+    border-radius: 999px;
+    padding: 8px 12px;
+    outline: none;
+    font-size: 0.9rem;
+    background: white;
+    color: black;
+    min-width: 60px;
 }
 
-.search-placeholder-none {
-    border: none;
-    border-radius: 20px;
-    padding: 12px 12px;
-}
-
-.search-placeholder-none2 {
-    border: none;
-    border-radius: 20px;
-    padding: 12px 12px;
-}
 
 .bg-image {
     width: 100%;
@@ -171,4 +170,37 @@ body {
     font-size: 0.9rem;
     color: #7f8c8d;
     margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .page-tittle {
+        text-align: center;
+    }
+
+    .search-bars {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .bg-image {
+        width: max-content;
+        height: 30rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .rated-books {
+        text-align: start;
+        margin-bottom: 6px;
+    }
+
+    .rated-books-tittle {
+        margin-left: 4px;
+    }
+
+    .book-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
