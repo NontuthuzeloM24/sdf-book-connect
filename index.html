@@ -1,143 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Connect</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="./script.js" type="defer"></script>
-  </head>
-
-  <body>
-    <!-- HEADER -->
-    <div class="top-view">
-      <h1 class="page-tittle">Book Connect</h1>
-
-      <div class="search-bars">
-        <input type="text" placeholder="Search..." />
-        <input type="text" />
-        <input type="text" />
-      </div>
-    </div>
-
-    <!-- HERO IMAGE -->
-    <div>
-      <img
-        class="bg-image"
-        src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg"
-        alt="Street image with Autumn fall trees"
-      />
-    </div>
-
-    <!-- RATED BOOKS SECTION -->
-    <div class="rated-books">
-      <h1 class="rated-books-tittle">Top Rated Books:</h1>
-      <ul class="rated-books-list">
-        <li>Harry Potter and the Goblet of Fire</li>
-        <li>The Hunger Games</li>
-        <li>Rich Dad</li>
-      </ul>
-    </div>
-
-    <!-- BOOK GRID SECTION -->
-    <section>
-      <div class="book-grid">
-        <!-- Book 1 -->
-        <div class="book-card">
-          <img
-            src="https://tse2.mm.bing.net/th/id/OIP.5aSMictTTCm5jNi5fknagwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="Harry Potter and the Goblet of Fire"
-          />
-          <div class="book-tittle">Harry Potter and the Goblet of Fire</div>
-          <div class="book-author">By: J.K. Rowling</div>
-          <div class="book-info">Popularity: 97</div>
-          <div class="book-date">Published: July 8, 2000</div>
+    <script src="final/script.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <!-- Header -->
+        <div class="top-view">
+            <h1 class="page-tittle">Book Connect</h1>
+            <div class="search-bars">
+                <input type="text" placeholder="Search..." id="searchInput" />
+            </div>
         </div>
 
-        <!-- Book 2 -->
-        <div class="book-card">
-          <img
-            src="https://tse2.mm.bing.net/th/id/OIP.AP5L3tm0ZivbC-p6BTBKnAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="Fourth Wing"
-          />
-          <div class="book-tittle">Fourth Wing</div>
-          <div class="book-author">By: Rebecca Yarros</div>
-          <div class="book-info">Popularity: 100</div>
-          <div class="book-date">Published: May 2, 2023</div>
+        <!-- Banner Image -->
+        <div>
+            <img class="bg-image" src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg" alt="Street image with Autumn fall trees">
         </div>
 
-        <!-- Book 3 -->
-        <div class="book-card">
-          <img
-            src="https://tse2.mm.bing.net/th/id/OIP.lErxPNRuZBqoYcvKcnI3EQHaLb?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="The Hunger Games"
-          />
-          <div class="book-tittle">The Hunger Games</div>
-          <div class="book-author">By: Suzanne Collins</div>
-          <div class="book-info">Popularity: 98</div>
-          <div class="book-date">Published: September 14, 2008</div>
+        <!-- Top Rated Section -->
+        <div class="rated-books">
+            <h1 class="rated-books-tittle">Top Rated Books:</h1>
+            <ul class="rated-books-list" id="topRatedList">
+                <!-- Top rated books dynamically inserted here -->
+            </ul>
         </div>
 
-        <!-- Book 4 -->
-        <div class="book-card">
-          <img
-            src="https://tse4.mm.bing.net/th/id/OIP.-kFbJ3sSEfk8NqSaV-JFIwHaLO?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="Rich Dad"
-          />
-          <div class="book-tittle">Rich Dad</div>
-          <div class="book-author">By: Robert T. Kiyosaki</div>
-          <div class="book-info">Popularity: 90</div>
-          <div class="book-date">Published: April 8, 1997</div>
-        </div>
+        <!-- Book Grid -->
+        <section>
+            <div class="book-grid" id="bookGrid">
+                <!-- Books dynamically generated here via JS -->
+            </div>
+            <div style="text-align: center; margin: 20px;">
+                <button id="loadMoreBtn">Load More</button>
+            </div>
+        </section>
+    </main>
 
-        <!-- Book 5 -->
-        <div class="book-card">
-          <img
-            src="https://tse3.mm.bing.net/th/id/OIP.JFGBS-7WABHsbLhUnsGfAQHaLO?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="Divergent"
-          />
-          <div class="book-tittle">Divergent</div>
-          <div class="book-author">By: Veronica Roth</div>
-          <div class="book-info">Popularity: 99</div>
-          <div class="book-date">Published: April 25, 2011</div>
-        </div>
-
-        <!-- Book 6 -->
-        <div class="book-card">
-          <img
-            src="https://th.bing.com/th/id/R.9120860a77a762e63e4eee7df44fbe02?rik=DEGWTlDew9Y4sA&pid=ImgRaw&r=0"
-            alt="The Giver"
-          />
-          <div class="book-tittle">The Giver</div>
-          <div class="book-author">By: Lois Lowry</div>
-          <div class="book-info">Popularity: 98</div>
-          <div class="book-date">Published: April 26, 1993</div>
-        </div>
-
-        <!-- Book 7 -->
-        <div class="book-card">
-          <img
-            src="https://tse4.mm.bing.net/th/id/OIP.T-5-RnZLGCZP0UrSZ6MISgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-            alt="The Silent Patient"
-          />
-          <div class="book-tittle">The Silent Patient</div>
-          <div class="book-author">By: Alex Michaelides</div>
-          <div class="book-info">Popularity: 95</div>
-          <div class="book-date">Published: February 5, 2019</div>
-        </div>
-
-        <!-- Book 8 -->
-        <div class="book-card">
-          <img
-            src="https://th.bing.com/th/id/R.1319bcbd5999fd3d866ef3864ad4e829?rik=v4GW1YcbE6ouBw&riu=http%3a%2f%2frickriordanbooklist.com%2fwp-content%2fuploads%2f2014%2f09%2fRick-Riordan-The-Lightning-Thief-Graphic-Novel.jpg&ehk=xxWRFmsiRbMXHGayw33lRCm2UiyGGUSrweWyDQjZfss%3d&risl=&pid=ImgRaw&r=0"
-            alt="The Lightning Thief"
-          />
-          <div class="book-tittle">The Lightning Thief</div>
-          <div class="book-author">By: Rick Riordan</div>
-          <div class="book-info">Popularity: 97</div>
-          <div class="book-date">Published: July 28, 2005</div>
-        </div>
-      </div>
-    </section>
-  </body>
+    <!-- Scripts -->
+    <script type="module" src="script.js"></script>
+</body>
 </html>
+
