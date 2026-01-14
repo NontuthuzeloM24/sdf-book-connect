@@ -10,7 +10,3 @@ export function loadMoreBooks() {
     }
     displayBooks(nextBooks);
 }
-
-
-
-
